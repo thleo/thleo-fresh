@@ -24,10 +24,34 @@ setopt prompt_subst
 prompt='%n ♥ %2/ $(git_branch_name) > ~ 🍰 #'
 
 # shortcuts
-# mostly dbt
+# shell
+alias edit_shell_profile="echo '>>>' vi ~/.zshrc; vi ~/.zshrc"
+
+# git
 alias get="git"
 alias gut="git"
 alias fresh_please="echo ### checkout main and pull latest updates; git checkout master && git pull"
-alias full_refresh_model_run="echo '>>>' dbt run --full-refresh -m; dbt run --full-refresh -m"
-alias edit_shell_profile="echo '>>>' vi ~/.zshrc; vi ~/.zshrc"
+alias nbranch="echo '>>>' git checkout -b; git checkout -b"
+
+
+
+# dbt
 alias docs_gen="dbt docs generate"
+alias defer_model_run="echo '>>>' dbt run --defer --state ci_state/artifacts/ -m; dbt run --defer --state ci_state/artifacts/ -m"
+alias full_refresh_defer_model_run="echo '>>>' dbt run --full-refresh --defer --state ci_state/artifacts/ -m; dbt run --full-refresh --defer --state ci_state/artifacts/ -m"
+alias full_refresh_model_run="echo '>>>' dbt run --full-refresh -m; dbt run --full-refresh -m"
+alias dbtt="echo '>>>' dbt test -m;dbt test -m"
+
+# other
+alias prep_defer="echo '>>>' make ci_state; make ci_state"
+
+# FUNCTIONS ⚡️
+# checkout feature branch and rebase against master
+function chre ()
+{
+    echo ">>> git checkout $1 && git rebase master"
+    git checkout $1
+    git rebase master
+    echo "$1 is up to date with prod"
+    return 0
+}
