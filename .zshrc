@@ -21,7 +21,7 @@ function git_branch_name()
 setopt prompt_subst
 
 # Config for prompt. PS1 synonym.
-prompt='%n ♥ %2/ $(git_branch_name) > ~ 🍰 #'
+prompt='%n ♥ %2/ $(git_branch_name) > ~ 🍰 # '
 
 # shortcuts
 # shell
@@ -55,3 +55,6 @@ function chre ()
     echo "$1 is up to date with prod"
     return 0
 }
+
+# add pyenv to path
+eval "$(pyenv init --path)"
