@@ -6,4 +6,6 @@
 brew install gh
 
 # env management python
-brew install pipenv
+brew install pyenv
+brew install pyenv-virtualenv
+
