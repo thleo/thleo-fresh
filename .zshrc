@@ -55,6 +55,15 @@ function chre ()
     echo "$1 is up to date with prod"
     return 0
 }
+# run aws commands in specific profile without setting config
+# function aws{{ aws_profile_short }} ()
+# {
+#     echo '>>>' aws $@ --profile {{ aws_profile_name }}; aws $@ --profile {{ aws_profile_name }}
+# }
+function awsprod ()
+{
+    echo '>>>' aws $@ --profile production; aws $@ --profile production   
+}
 
 # add pyenv to path
 eval "$(pyenv init --path)"
