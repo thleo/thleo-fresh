@@ -27,6 +27,10 @@ prompt='%n ♥ %2/ $(git_branch_name) > ~ 🍰 # '
 # shell
 alias edit_shell_profile="echo '>>>' vi ~/.zshrc; vi ~/.zshrc"
 
+# AWS
+alias run_aws_staging="echo NOW RUNNING IN STAGING ; echo '>>>' ENVIRONMENT=staging AWS_PROFILE=staging ;ENVIRONMENT=staging AWS_PROFILE=staging "
+alias run_aws_prod="echo NOW RUNNING IN PRODUCTION ; echo '>>>' ENVIRONMENT=production AWS_PROFILE=production ;ENVIRONMENT=production AWS_PROFILE=production "
+
 # git
 alias get="git"
 alias gut="git"
