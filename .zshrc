@@ -147,3 +147,6 @@ export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 source ~/.dbt-completion.bash
+
+# add timestamp to prompt
+prompt='%F{blue%}[%D{%Y/%m/%f} %D{%L:%M:%S}] '$prompt
