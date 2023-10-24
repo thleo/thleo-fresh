@@ -149,4 +149,4 @@ autoload -U +X bashcompinit && bashcompinit
 source ~/.dbt-completion.bash
 
 # add timestamp to prompt
-prompt='%F{blue%}[%D{%Y/%m/%f} %D{%L:%M:%S}] '$prompt
+prompt='%F{blue%}[%D{%Y/%m/%f} %D{%K:%M:%S}] '$prompt
