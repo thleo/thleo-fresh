@@ -57,7 +57,7 @@ alias dbt_prod="echo NOW RUNNING IN PRODUCTION ; echo '>>>' ENVIRONMENT=producti
 # other
 alias prep_defer="echo '>>>' make ci_state; make ci_state"
 
-# ORGNAME
+# COMPANY SPECIFIC
 alias rsauth="echo '>>>' rscreds staging ORGNAME --user dleong
 aws --endpoint-url https://redshift-fips.us-east-1.amazonaws.com redshift get-cluster-credentials --cluster-identifier staging-ORGNAME --db-user dleong --db-name ORGNAME --duration-seconds 3600 --profile staging; rscreds staging ORGNAME --user dleong
 aws --endpoint-url https://redshift-fips.us-east-1.amazonaws.com redshift get-cluster-credentials --cluster-identifier staging-ORGNAME --db-user dleong --db-name ORGNAME --duration-seconds 3600 --profile staging"
@@ -85,6 +85,14 @@ function awsprod ()
     echo '>>>' aws $@ --profile production; aws $@ --profile production
     
 }
+
+# list out production models in dbt
+function dbtList_models() {
+  MODELVAR=$1
+  echo "ENVIRONMENT=production AWS_PROFILE=production dbt list -s $MODELVAR --resource-type model"
+  "ENVIRONMENT=production AWS_PROFILE=production dbt list -s $MODELVAR --resource-type model"
+}
+
 # test function
 function test ()
 {
