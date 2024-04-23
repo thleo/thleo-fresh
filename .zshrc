@@ -89,8 +89,8 @@ function awsprod ()
 # list out production models in dbt
 function dbtList_models() {
   MODELVAR=$1
-  echo "ENVIRONMENT=production AWS_PROFILE=production dbt list -s $MODELVAR --resource-type model"
-  "ENVIRONMENT=production AWS_PROFILE=production dbt list -s $MODELVAR --resource-type model"
+  echo ">>> ENVIRONMENT=production AWS_PROFILE=production dbt list -s $MODELVAR --resource-type model"
+  ENVIRONMENT=production AWS_PROFILE=production dbt list -s $MODELVAR --resource-type model
 }
 
 # test function
