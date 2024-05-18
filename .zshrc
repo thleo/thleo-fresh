@@ -20,8 +20,15 @@ function git_branch_name()
 
 setopt prompt_subst
 
+# env in prompt
+function virtualenv_info { 
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+}
+
 # Config for prompt. PS1 synonym.
-prompt='%n ♥ %2/ $(git_branch_name) > ~ 🍰 # '
+export VIRTUAL_ENV_DISABLE_PROMPT=0
+prompt='$(virtualenv_info) %n ♥ %2/ $(git_branch_name) > ~ 🍰 # '
+prompt='%F{blue%}[%D{%Y/%m/%f} %D{%K:%M:%S}] '$prompt
 
 # shortcuts
 # shell
