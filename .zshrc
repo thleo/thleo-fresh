@@ -64,7 +64,7 @@ alias dbt_prod="echo NOW RUNNING IN PRODUCTION ; echo '>>>' ENVIRONMENT=producti
 # other
 alias prep_defer="echo '>>>' make ci_state; make ci_state"
 
-# COMPANY SPECIFIC
+# CORPORATE AUTHENTICATION
 alias rsauth="echo '>>>' rscreds staging ORGNAME --user dleong
 aws --endpoint-url https://redshift-fips.us-east-1.amazonaws.com redshift get-cluster-credentials --cluster-identifier staging-ORGNAME --db-user dleong --db-name ORGNAME --duration-seconds 3600 --profile staging; rscreds staging ORGNAME --user dleong
 aws --endpoint-url https://redshift-fips.us-east-1.amazonaws.com redshift get-cluster-credentials --cluster-identifier staging-ORGNAME --db-user dleong --db-name ORGNAME --duration-seconds 3600 --profile staging"
